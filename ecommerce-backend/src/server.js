@@ -9,11 +9,23 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Root route (optional friendly message)
+// ✅ Dynamic CORS
+const allowedOrigins = (process.env.CORS_ORIGIN || '').split(','); // split CSV from .env
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS not allowed for ${origin}`));
+    }
+  }
+}));
+
+// Root route (friendly message)
 app.get('/', (req, res) => {
   res.send('🚀 LuxeCart Backend is running! Visit /api/* for API endpoints.');
 });
@@ -39,3 +51,4 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
