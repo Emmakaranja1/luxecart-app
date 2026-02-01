@@ -12,8 +12,10 @@ app.use(helmet());
 app.use(express.json());
 app.use(morgan('dev'));
 
-// ✅ Dynamic CORS
-const allowedOrigins = (process.env.CORS_ORIGIN || '').split(','); // split CSV from .env
+const allowedOrigins = (process.env.CORS_ORIGIN || '')
+  .split(',')
+  .map(origin => origin.trim());
+
 
 app.use(cors({
   origin: function(origin, callback) {
