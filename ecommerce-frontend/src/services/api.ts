@@ -13,7 +13,7 @@ import {
 } from '@/types';
 
 // In a real app, this would be your backend API URL
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://luxecart-backend-82cb.onrender.com';
 
 // Axios instance (prepared for real backend integration)
 export const api = axios.create({
