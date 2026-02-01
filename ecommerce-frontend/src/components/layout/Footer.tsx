@@ -99,13 +99,11 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-primary/20 mt-12 pt-8 flex flex-col md:flex-row justify-center items-center gap-4 text-center">
           <p className="text-gray-400 text-sm">
             © {currentYear} LuxeCart. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm">
-            Built with React, TypeScript & Tailwind CSS
-          </p>
+       
         </div>
       </div>
     </footer>
