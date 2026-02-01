@@ -13,6 +13,11 @@ app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
 app.use(express.json());
 app.use(morgan('dev'));
 
+// Root route (optional friendly message)
+app.get('/', (req, res) => {
+  res.send('🚀 LuxeCart Backend is running! Visit /api/* for API endpoints.');
+});
+
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/categories', require('./routes/categories'));
