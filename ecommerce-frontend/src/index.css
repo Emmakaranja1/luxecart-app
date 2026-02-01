@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+@layer base {
+  body {
+    @apply bg-dark text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-card;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-primary rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-secondary;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-primary/30 text-primary;
+  }
+}
+
+/* Custom utility classes */
+@layer components {
+  /* Button variants */
+  .btn-hero {
+    @apply px-8 py-4 rounded-lg font-display font-bold uppercase tracking-wider text-dark bg-gradient-hero shadow-glow-primary hover:shadow-glow-secondary transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 rounded-lg font-display font-bold uppercase tracking-wide text-dark bg-gradient-secondary shadow-glow-secondary hover:shadow-glow-primary transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-lg font-display font-semibold uppercase tracking-wide border-2 border-primary text-primary hover:bg-primary hover:text-dark transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 rounded-lg border-2 border-primary/50 text-primary hover:border-primary hover:bg-primary/10 transition-all duration-300;
+  }
+
+  /* Card variants */
+  .card-glass {
+    @apply bg-dark-card/80 backdrop-blur-lg border border-primary/20 rounded-xl p-6 shadow-xl;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-card border border-primary/30 rounded-xl p-6 shadow-glow-primary;
+  }
+
+  /* Text gradients */
+  .text-gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-secondary {
+    @apply bg-gradient-secondary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-hero {
+    @apply bg-gradient-hero bg-clip-text text-transparent;
+  }
+
+  /* Input styling */
+  .input-field {
+    @apply w-full px-4 py-3 bg-dark-card border-2 border-primary/30 rounded-lg text-white placeholder-gray-400 focus:border-primary focus:outline-none focus:shadow-glow-primary transition-all duration-300;
+  }
+
+  /* Badge styling */
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  }
+
+  .badge-sale {
+    @apply badge bg-gradient-secondary text-dark shadow-glow-secondary;
+  }
+
+  .badge-new {
+    @apply badge bg-gradient-primary text-dark shadow-glow-primary;
+  }
+
+  .badge-stock {
+    @apply badge bg-accent text-dark;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.8);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply bg-dark-lighter animate-pulse rounded;
+}
+
+/* Page transition */
+.page-transition {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
