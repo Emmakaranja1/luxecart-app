@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { Button } from '@/components/common';
 import { useCartStore } from '@/store/cartStore';
 import { useAuthStore } from '@/store/authStore';

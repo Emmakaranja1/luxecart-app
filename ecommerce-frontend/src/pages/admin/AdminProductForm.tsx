@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Upload } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/common';
 import { adminApi } from '@/services/adminApi';
 import { productsApi, categoriesApi } from '@/services/api';

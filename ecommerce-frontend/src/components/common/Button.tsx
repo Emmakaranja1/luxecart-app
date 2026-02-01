@@ -5,7 +5,7 @@ import { cn } from '@/utils/helpers';
 export type ButtonVariant = 'hero' | 'accent' | 'ghost' | 'outline' | 'default';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ComponentProps<typeof motion.button> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isLoading?: boolean;

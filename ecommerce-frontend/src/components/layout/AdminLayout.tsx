@@ -6,7 +6,6 @@ import {
   Package,
   ShoppingBag,
   DollarSign,
-  Users,
   UserCircle,
   LogOut,
   Menu,
